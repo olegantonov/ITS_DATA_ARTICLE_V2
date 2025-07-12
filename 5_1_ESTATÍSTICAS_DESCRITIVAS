@@ -1,0 +1,72 @@
+import pandas as pd
+
+# === 1. Carregamento do CSV ===
+df = pd.read_csv(
+    r"C:\Users\danie\OneDrive\Documentos\Mestrado-ITS-Article\ANÁLISE_FINAL\ANALISE_VOO_DETALHADA_v3_tempo_diferente.csv",
+    low_memory=False
+)
+
+# === 2. Dicionário com o ano de implementação de PBN por TMA ===
+anos_pbn = {
+    'SBCF': 2015,
+    'SBBR': 2015,
+    'SBCT': 2017,
+    'SBFZ': None,
+    'SBPA': 2017,
+    'SBRF': 2010,
+    'SBRJ': 2011,
+    'SBGL': 2011,
+    'SBSV': 2017,
+    'SBSP': 2015,
+    'SBGR': 2015
+}
+
+# === 3. Função para calcular índice PBN médio entre origem e destino ===
+def calcular_pbn(row):
+    ano_voo = row['Ano']
+    orig = row['Sigla ICAO Aeroporto Origem']
+    dest = row['Sigla ICAO Aeroporto Destino']
+
+    def indice(tma):
+        ano_impl = anos_pbn.get(tma)
+        if ano_impl is None or ano_voo < ano_impl:
+            return 0
+        return round((ano_voo - ano_impl) / (2024 - ano_impl), 2)
+
+    pbn_orig = indice(orig)
+    pbn_dest = indice(dest)
+
+    return round((pbn_orig + pbn_dest) / 2, 2)
+
+# === 4. Aplicar a função para criar a coluna PBN_anos ===
+df['PBN_anos'] = df.apply(calcular_pbn, axis=1)
+
+# === 5. Aplicar filtro: voos com tempo real de até 500 minutos ===
+df_filtrado = df[df['Tempo_Voo_Real_min'] <= 500]
+
+# === 6. Selecionar as colunas desejadas ===
+colunas = [
+    'Tempo_Voo_Real_min',
+    'Consumo_Combustível_kg',
+    'Consumo_CO2_do_Voo_kg',
+    'Distância_Rota_NM',
+    'PBN_anos'
+]
+
+# === 7. Calcular estatísticas descritivas ===
+descricao = df_filtrado[colunas].describe().loc[['mean', 'std', 'min', 'max']].T
+descricao.columns = ['Mean', 'Standard Deviation', 'Minimum', 'Maximum']
+descricao.index = [
+    'Actual Flight Time (min)',
+    'Fuel Consumption (kg)',
+    'CO₂ Emissions (kg)',
+    'Route Distance (NM)',
+    'PBN Implementation Index'
+]
+
+# === 8. Exibir e salvar a tabela ===
+print("\nTabela 4: Estatísticas Descritivas (voos com até 500 min)")
+print(descricao)
+
+descricao.to_csv("tabela_4_estatisticas_descritivas_filtrada.csv", index=True)
+print("Arquivo salvo como 'tabela_4_estatisticas_descritivas_filtrada.csv'")
