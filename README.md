@@ -18,19 +18,21 @@ We employ multiple linear regression models using PBN deployment levels, route d
 
 ## 📁 Repository Structure
 
+```
 ITS_DATA_ARTICLE_V2/
-├── 00_DEPURAÇÃO.PY # Raw data cleaning and correction
-├── 0_DOWNLOAD_DADOS.PY # Automated download of raw datasets
-├── 1_CONSOLIDAÇÃO_DADOS.PY # Concatenation and standardization of datasets
-├── 2_ANÁLISE_DADOS_CONSOLIDADOS.PY # Initial descriptive analysis
-├── 3_FILTRO_AERÓDROMOS_VARIAVEIS.PY # Filtering by airport and aircraft variables
-├── 3.1_ANÁLISE_GRÁFICA_VOOS_POR_ANO.PY # Graphical trend analysis by year
-├── 4_ANÁLISE_E_INSERÇÃO_DADOS.PY # Integration of derived variables (PBN index)
-├── 4.1_FILTRO_TEMPOS_DIFERENTES.PY # Removal of outliers in flight time
-├── 4.3_ANÁLISE_VOOS.PY # General exploratory analysis
-├── 5_1_ESTATÍSTICAS_DESCRITIVAS.PY # Statistical summaries for all variables
-├── 5_ANÁLISE_REGRESSÃO_LINEAR.PY # Multiple linear regression (OLS)
-├── 6_GRAFICO_REGRESSAO.PY # Visualization of regression coefficients
+├── 00_DEPURAÇÃO.PY                      # Raw data cleaning and correction
+├── 0_DOWNLOAD_DADOS.PY                 # Automated download of raw datasets
+├── 1_CONSOLIDAÇÃO_DADOS.PY             # Concatenation and standardization of datasets
+├── 2_ANÁLISE_DADOS_CONSOLIDADOS.PY     # Initial descriptive analysis
+├── 3_FILTRO_AERÓDROMOS_VARIAVEIS.PY    # Filtering by airport and aircraft variables
+├── 3.1_ANÁLISE_GRÁFICA_VOOS_POR_ANO.PY  # Graphical trend analysis by year
+├── 4_ANÁLISE_E_INSERÇÃO_DADOS.PY       # Integration of derived variables (PBN index)
+├── 4.1_FILTRO_TEMPOS_DIFERENTES.PY     # Removal of outliers in flight time
+├── 4.3_ANÁLISE_VOOS.PY                  # General exploratory analysis
+├── 5_1_ESTATÍSTICAS_DESCRITIVAS.PY     # Statistical summaries for all variables
+├── 5_ANÁLISE_REGRESSÃO_LINEAR.PY       # Multiple linear regression (OLS)
+└── 6_GRAFICO_REGRESSAO.PY              # Visualization of regression coefficients
+```
 
 
 ## 📊 Methods
@@ -67,7 +69,7 @@ If you use any part of this repository in your research or teaching, please cite
 
 ## 🧑‍💻 Authors and Contact
 
-- **Daniel Guilherme Marques da Silva** – danielgms@unb.br  
+- **Daniel Guilherme Marques da Silva** – daniel.silva@unb.br  
 - **Prof. Pastor Willy Gonzales Taco** – pastor@unb.br  
 - **Profª. Fabiana Serra de Arruda** – farruda@unb.br  
 Universidade de Brasília – Programa de Pós-Graduação em Transportes  
