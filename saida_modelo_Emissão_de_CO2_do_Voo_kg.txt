@@ -1,0 +1,51 @@
+
+=== Modelo para Emissão de CO2 do Voo (kg) ===
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     Consumo_CO2_do_Voo_kg   R-squared:                       0.993
+Model:                               OLS   Adj. R-squared:                  0.993
+Method:                    Least Squares   F-statistic:                 5.332e+06
+Date:                   Sat, 12 Jul 2025   Prob (F-statistic):               0.00
+Time:                           18:15:58   Log-Likelihood:            -2.7496e+06
+No. Observations:                 350626   AIC:                         5.499e+06
+Df Residuals:                     350619   BIC:                         5.499e+06
+Df Model:                              6                                         
+Covariance Type:                     HC3                                         
+===========================================================================================
+                              coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                    4011.2363      3.118   1286.609      0.000    4005.126    4017.347
+PBN                        -6.1206      0.312    -19.588      0.000      -6.733      -5.508
+Distância_Rota_NM          20.2016      0.005   4076.222      0.000      20.192      20.211
+Modelo Equipamento_A320   610.2384      2.639    231.209      0.000     605.065     615.411
+Modelo Equipamento_A321  3412.1952      6.676    511.140      0.000    3399.111    3425.279
+Modelo Equipamento_B737   546.9666      3.373    162.170      0.000     540.356     553.577
+Modelo Equipamento_B738   700.9615      2.394    292.776      0.000     696.269     705.654
+==============================================================================
+Omnibus:                    12216.385   Durbin-Watson:                   1.083
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            35342.830
+Skew:                          -0.057   Prob(JB):                         0.00
+Kurtosis:                       4.551   Cond. No.                     3.52e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 3.52e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+Teste de Breusch-Pagan:
+Lagrange multiplier statistic: 90136.8476
+p-value: 0.0000
+f-value: 20220.7341
+f p-value: 0.0000
+
+Observações com alta influência (Cook's distance > 4/n):
+[    18     25     26 ... 350614 350615 350625]
+
+Teste de D'Agostino & Pearson para Emissão de CO2 do Voo (kg):
+Estatística: 12216.3847, p-valor: 0.000000
+Conclusão: Resíduos NÃO seguem distribuição normal.
+
+Efeito da variável PBN em Emissão de CO2 do Voo (kg):
+Coeficiente: -6.120579, p-valor: 0.00000000
+Interpretação: Maior implantação de PBN está associada a uma redução significativa em Emissão de CO2 do Voo (kg)

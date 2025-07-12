@@ -1,0 +1,51 @@
+
+=== Modelo para Tempo de Voo Real (min) ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     Tempo_Voo_Real_min   R-squared:                       0.053
+Model:                            OLS   Adj. R-squared:                  0.053
+Method:                 Least Squares   F-statistic:                     1454.
+Date:                Sat, 12 Jul 2025   Prob (F-statistic):               0.00
+Time:                        18:15:47   Log-Likelihood:            -3.6275e+06
+No. Observations:              350626   AIC:                         7.255e+06
+Df Residuals:                  350619   BIC:                         7.255e+06
+Df Model:                           6                                         
+Covariance Type:                  HC3                                         
+===========================================================================================
+                              coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                    -901.6304     38.997    -23.121      0.000    -978.062    -825.199
+PBN                       -23.5142      4.223     -5.568      0.000     -31.791     -15.237
+Distância_Rota_NM           4.6972      0.066     71.272      0.000       4.568       4.826
+Modelo Equipamento_A320   666.9416     31.006     21.510      0.000     606.172     727.712
+Modelo Equipamento_A321  1285.2482     60.789     21.143      0.000    1166.104    1404.392
+Modelo Equipamento_B737   -80.2515     27.260     -2.944      0.003    -133.679     -26.824
+Modelo Equipamento_B738   215.3629     23.524      9.155      0.000     169.256     261.470
+==============================================================================
+Omnibus:                   323014.589   Durbin-Watson:                   1.968
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          8274720.959
+Skew:                           4.721   Prob(JB):                         0.00
+Kurtosis:                      24.846   Cond. No.                     3.52e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 3.52e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+Teste de Breusch-Pagan:
+Lagrange multiplier statistic: 18717.2787
+p-value: 0.0000
+f-value: 3295.4008
+f p-value: 0.0000
+
+Observações com alta influência (Cook's distance > 4/n):
+[     4      5      9 ... 350317 350396 350403]
+
+Teste de D'Agostino & Pearson para Tempo de Voo Real (min):
+Estatística: 323014.5891, p-valor: 0.000000
+Conclusão: Resíduos NÃO seguem distribuição normal.
+
+Efeito da variável PBN em Tempo de Voo Real (min):
+Coeficiente: -23.514166, p-valor: 0.00000003
+Interpretação: Maior implantação de PBN está associada a uma redução significativa em Tempo de Voo Real (min)

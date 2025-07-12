@@ -1,0 +1,51 @@
+
+=== Modelo para Consumo de Combustível (kg) ===
+                              OLS Regression Results                              
+==================================================================================
+Dep. Variable:     Consumo_Combustível_kg   R-squared:                       0.993
+Model:                                OLS   Adj. R-squared:                  0.993
+Method:                     Least Squares   F-statistic:                 5.332e+06
+Date:                    Sat, 12 Jul 2025   Prob (F-statistic):               0.00
+Time:                            18:15:52   Log-Likelihood:            -2.3462e+06
+No. Observations:                  350626   AIC:                         4.692e+06
+Df Residuals:                      350619   BIC:                         4.693e+06
+Df Model:                               6                                         
+Covariance Type:                      HC3                                         
+===========================================================================================
+                              coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                    1269.3786      0.987   1286.609      0.000    1267.445    1271.312
+PBN                        -1.9369      0.099    -19.588      0.000      -2.131      -1.743
+Distância_Rota_NM           6.3929      0.002   4076.222      0.000       6.390       6.396
+Modelo Equipamento_A320   193.1134      0.835    231.209      0.000     191.476     194.750
+Modelo Equipamento_A321  1079.8086      2.113    511.140      0.000    1075.668    1083.949
+Modelo Equipamento_B737   173.0907      1.067    162.170      0.000     170.999     175.183
+Modelo Equipamento_B738   221.8233      0.758    292.776      0.000     220.338     223.308
+==============================================================================
+Omnibus:                    12216.385   Durbin-Watson:                   1.083
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            35342.830
+Skew:                          -0.057   Prob(JB):                         0.00
+Kurtosis:                       4.551   Cond. No.                     3.52e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 3.52e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+Teste de Breusch-Pagan:
+Lagrange multiplier statistic: 90136.8476
+p-value: 0.0000
+f-value: 20220.7341
+f p-value: 0.0000
+
+Observações com alta influência (Cook's distance > 4/n):
+[    18     25     26 ... 350614 350615 350625]
+
+Teste de D'Agostino & Pearson para Consumo de Combustível (kg):
+Estatística: 12216.3847, p-valor: 0.000000
+Conclusão: Resíduos NÃO seguem distribuição normal.
+
+Efeito da variável PBN em Consumo de Combustível (kg):
+Coeficiente: -1.936892, p-valor: 0.00000000
+Interpretação: Maior implantação de PBN está associada a uma redução significativa em Consumo de Combustível (kg)
