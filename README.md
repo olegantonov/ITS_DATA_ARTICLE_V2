@@ -2,9 +2,6 @@
 
 This repository contains the data processing scripts, regression models, and output files associated with the research article:
 
-**Silva, D. G. M., Taco, P. W. G., & Arruda, F. S. (2025).**  
-*Impacts of ITS on Aviation Efficiency: PBN Implementation in Brazilian Air Routes*  
-Universidade de Brasília – Programa de Pós-Graduação em Transportes.
 
 ## 🔍 Research Summary
 
@@ -57,21 +54,3 @@ All models use:
 - `results/`: Summary tables, regression outputs, and graphs
 - `figures/`: Exported charts for publication
 
----
-
-## 📚 Citation
-
-If you use any part of this repository in your research or teaching, please cite as follows:
-
-> Silva, D. G. M., Taco, P. W. G., & Arruda, F. S. (2025). *Impacts of ITS on Aviation Efficiency: PBN Implementation in Brazilian Air Routes*. Universidade de Brasília – Programa de Pós-Graduação em Transportes. Available at: https://github.com/olegantonov/ITS_DATA_ARTICLE_V2 (Accessed: 12 July 2025).
-
----
-
-## 🧑‍💻 Authors and Contact
-
-- **Daniel Guilherme Marques da Silva** – daniel.silva@unb.br  
-- **Prof. Pastor Willy Gonzales Taco** – pastor@unb.br  
-- **Profª. Fabiana Serra de Arruda** – farruda@unb.br  
-Universidade de Brasília – Programa de Pós-Graduação em Transportes  
-Annex SG-12, 1st Floor – Darcy Ribeiro University Campus – Asa Norte  
-Brasília – Federal District – 70910-900 – Brazil
